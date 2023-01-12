@@ -1,0 +1,11 @@
+@import "./resets", "./variables";
+
+@mixin flexBox($direction) {
+  display: flex;
+
+  flex-direction: $direction;
+}
+
+html {
+  font-size: 62.5%;
+}
