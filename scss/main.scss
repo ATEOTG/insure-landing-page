@@ -98,6 +98,7 @@ html {
 
   h1 {
     font-family: $font-heading;
+    text-align: center;
     font-size: 4.8rem;
     line-height: 4.8rem;
     letter-spacing: -0.67px;
@@ -128,5 +129,84 @@ html {
   p {
     @include paragraphStyling();
     color: $neutral-gray;
+  }
+}
+
+.cta {
+  @include marginCenter();
+  @include flexBox(center, center, column);
+  margin: 15rem auto;
+
+  background-image: url("/dist/images/bg-pattern-how-we-work-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
+  gap: 4rem;
+  padding: 5rem 0 4.5rem 0;
+  background-color: $primary-drk-violet;
+
+  h2 {
+    font-weight: 400;
+    width: 30rem;
+    font-family: $font-heading;
+    font-size: 4rem;
+    color: $neutral-white;
+    text-align: center;
+  }
+}
+
+footer {
+  background-image: url("/dist/images/bg-pattern-footer-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top 0;
+
+  .footer-line {
+    border-bottom: 0.2px solid #837d874b;
+    margin-bottom: 3.5rem;
+  }
+}
+
+.footer-cont {
+  @include marginCenter();
+  padding: 8rem 0;
+
+  .footer-intro-cont {
+    @include flexBox(center, center, column);
+    gap: 3rem;
+
+    .footer-icons-cont {
+      @include flexBox(center, center);
+      gap: 2rem;
+      margin-bottom: 4.5rem;
+    }
+  }
+}
+
+.footer-links {
+  @include flexBox(center, center, column);
+  gap: 4rem;
+
+  .footer-item {
+    @extend .footer-links;
+    gap: 2rem;
+
+    p {
+      font-weight: 700;
+      font-family: $font-body;
+      font-size: 1.3rem;
+      color: $neutral-gray;
+      letter-spacing: 1.5px;
+    }
+
+    &-links {
+      @extend .footer-item;
+
+      a {
+        font-weight: 700;
+        font-family: $font-body;
+        font-size: 1.3rem;
+        color: $primary-drk-violet;
+        letter-spacing: 1.5px;
+      }
+    }
   }
 }

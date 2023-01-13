@@ -90,6 +90,7 @@ html {
 }
 .features h1 {
   font-family: "DM Serif Display", serif;
+  text-align: center;
   font-size: 4.8rem;
   line-height: 4.8rem;
   letter-spacing: -0.67px;
@@ -126,4 +127,84 @@ html {
   text-align: center;
   line-height: 2.6rem;
   color: #837d87;
+}
+
+.cta {
+  width: 88%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 15rem auto;
+  background-image: url("/dist/images/bg-pattern-how-we-work-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top 0 right 0;
+  gap: 4rem;
+  padding: 5rem 0 4.5rem 0;
+  background-color: #2d2640;
+}
+.cta h2 {
+  font-weight: 400;
+  width: 30rem;
+  font-family: "DM Serif Display", serif;
+  font-size: 4rem;
+  color: #fafafa;
+  text-align: center;
+}
+
+footer {
+  background-image: url("/dist/images/bg-pattern-footer-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top 0;
+}
+footer .footer-line {
+  border-bottom: 0.2px solid rgba(131, 125, 135, 0.2941176471);
+  margin-bottom: 3.5rem;
+}
+
+.footer-cont {
+  width: 88%;
+  margin: 0 auto;
+  padding: 8rem 0;
+}
+.footer-cont .footer-intro-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.footer-cont .footer-intro-cont .footer-icons-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 4.5rem;
+}
+
+.footer-links, .footer-links .footer-item, .footer-links .footer-item-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+}
+.footer-links .footer-item, .footer-links .footer-item-links {
+  gap: 2rem;
+}
+.footer-links .footer-item p, .footer-links .footer-item-links p {
+  font-weight: 700;
+  font-family: "Karla", sans-serif;
+  font-size: 1.3rem;
+  color: #837d87;
+  letter-spacing: 1.5px;
+}
+.footer-links .footer-item-links a {
+  font-weight: 700;
+  font-family: "Karla", sans-serif;
+  font-size: 1.3rem;
+  color: #2d2640;
+  letter-spacing: 1.5px;
 }/*# sourceMappingURL=main.css.map */
