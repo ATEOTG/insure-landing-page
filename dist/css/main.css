@@ -10,6 +10,53 @@ html {
   font-size: 62.5%;
 }
 
+header {
+  position: relative;
+}
+
+.nav-menu__mobile-list {
+  display: none;
+}
+
+.nav-menu__mobile-list.clicked {
+  display: block;
+  display: flex;
+  align-items: normal;
+  justify-content: normal;
+  flex-direction: column;
+  z-index: 999;
+  background-image: url("/dist/images/bg-pattern-mobile-nav.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  gap: 3rem;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(13.1%);
+  padding: 4rem 0 30rem 0;
+  list-style: none;
+  background-color: #2b272f;
+}
+.nav-menu__mobile-list.clicked p {
+  font-family: "Karla", sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 2.6rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fafafa;
+}
+.nav-menu__mobile-list.clicked :last-child {
+  width: 88%;
+  margin: 0 auto;
+}
+.nav-menu__mobile-list.clicked .button {
+  width: 100%;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
 .heading-cont {
   display: flex;
   align-items: center;
@@ -51,7 +98,7 @@ html {
   gap: 1.5rem;
 }
 .hero .hero-text-cont div h1 {
-  z-index: 999;
+  z-index: 998;
   font-family: "DM Serif Display", serif;
   font-size: 4.8rem;
   text-align: center;
