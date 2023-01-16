@@ -37,7 +37,7 @@ header {
   justify-content: normal;
   flex-direction: column;
   z-index: 999;
-  background-image: url("/dist/images/bg-pattern-mobile-nav.svg");
+  background-image: url("../images/bg-pattern-mobile-nav.svg");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
@@ -424,7 +424,7 @@ header {
   justify-content: center;
   flex-direction: column;
   margin: 15rem auto;
-  background-image: url("/dist/images/bg-pattern-how-we-work-mobile.svg");
+  background-image: url("../images/bg-pattern-how-we-work-mobile.svg");
   background-repeat: no-repeat;
   background-position: top 0 right 0;
   gap: 4rem;
@@ -441,7 +441,7 @@ header {
   .cta {
     flex-direction: row;
     justify-content: space-around;
-    background-image: url("/dist/images/bg-pattern-how-we-work-desktop.svg");
+    background-image: url("../images/bg-pattern-how-we-work-desktop.svg");
   }
 }
 .cta h2 {
@@ -471,13 +471,13 @@ header {
 }
 
 footer {
-  background-image: url("/dist/images/bg-pattern-footer-mobile.svg");
+  background-image: url("../images/bg-pattern-footer-mobile.svg");
   background-repeat: no-repeat;
   background-position: top 0;
 }
 @media (min-width: 900px) {
   footer {
-    background-image: url("/dist/images/bg-pattern-footer-desktop.svg");
+    background-image: url("../images/bg-pattern-footer-desktop.svg");
   }
 }
 footer .footer-line {
