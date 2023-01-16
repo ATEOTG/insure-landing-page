@@ -20,6 +20,14 @@
       <div class="heading-cont">
         <img class="logo" src="./images/logo.svg" alt="insure logo" />
         <nav class="nav-menu">
+          <div class="nav-menu__desktop">
+            <ul class="nav-menu__desktop-list">
+              <li><p>HOW WE WORK</p></li>
+              <li><p>BLOG</p></li>
+              <li><p>ACCOUNT</p></li>
+              <li><button class="button">VIEW PLANS</button></li>
+            </ul>
+          </div>
           <img
             class="nav-menu__hamburger"
             src="./images/icon-hamburger.svg"
@@ -35,41 +43,50 @@
       </div>
     </header>
     <section class="hero">
-      <picture style="height: 0px">
-        <source
-          media="(min-width:900px)"
-          srcset="./images/image-intro-desktop.jpg"
-        />
-        <img
-          class="hero-img"
-          src="./images/image-intro-mobile.jpg"
-          alt="family with their children"
-        />
-      </picture>
-      <div class="hero-text-cont">
-        <picture class="hero-img-left">
+      <img
+        class="hero-img-left-desk"
+        src="./images/bg-pattern-intro-left-desktop.svg"
+        alt=""
+      />
+      <img
+        class="hero-img-right-desk"
+        src="./images/bg-pattern-intro-right-desktop.svg"
+        alt=""
+      />
+      <div class="hero-cont">
+        <picture style="height: 0px">
           <source
-            media="(min-width: 900px)"
-            srcset="./images/bg-pattern-intro-left-desktop.svg"
+            media="(min-width:800px)"
+            srcset="./images/image-intro-desktop.jpg"
           />
-          <img src="./images/bg-pattern-intro-left-mobile.svg" alt="" />
+          <img
+            class="hero-img"
+            src="./images/image-intro-mobile.jpg"
+            alt="family with their children"
+          />
         </picture>
-        <div>
-          <h1>Humanizing your insurance.</h1>
-          <p>
-            Get your life insurance easier and faster. We blend our expertise
-            and technology to help you find the plan that's right for you.
-            Ensure you and your loved ones are protected
-          </p>
-          <button class="button">VIEW PLANS</button>
+        <div class="hero-text-cont">
+          <img
+            class="hero-img-left-mobile"
+            src="./images/bg-pattern-intro-left-mobile.svg"
+            alt=""
+          />
+          <div>
+            <h1>Humanizing your insurance.</h1>
+            <p>
+              Get your life insurance easier and faster. We blend our expertise
+              and technology to help you find the plan that's right for you.
+              Ensure you and your loved ones are protected
+            </p>
+            <button class="button">VIEW PLANS</button>
+          </div>
+
+          <img
+            class="hero-img-right-mobile"
+            src="./images/bg-pattern-intro-right-mobile.svg"
+            alt=""
+          />
         </div>
-        <picture class="hero-img-right">
-          <source
-            media="(min-width:900px)"
-            srcset="./images/bg-pattern-intro-right-desktop.svg"
-          />
-          <img src="./images/bg-pattern-intro-right-mobile.svg" alt="" />
-        </picture>
       </div>
     </section>
     <section class="features">

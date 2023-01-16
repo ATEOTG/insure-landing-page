@@ -10,6 +10,11 @@
 @mixin marginCenter {
   width: 88%;
   margin: 0 auto;
+
+  @include desktop() {
+    width: 80%;
+    max-width: 127rem;
+  }
 }
 
 @mixin paragraphStyling {
@@ -17,6 +22,16 @@
   font-size: 1.6rem;
   text-align: center;
   line-height: 2.6rem;
+
+  @include desktop() {
+    text-align: left;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 900px) {
+    @content;
+  }
 }
 
 html {
@@ -25,6 +40,16 @@ html {
 
 header {
   position: relative;
+  @include desktop() {
+    z-index: 999;
+    background-color: $neutral-white;
+  }
+}
+
+.nav-menu__hamburger {
+  @include desktop() {
+    display: none;
+  }
 }
 
 .nav-menu__mobile-list {
@@ -38,6 +63,7 @@ header {
   background-image: url("/dist/images/bg-pattern-mobile-nav.svg");
   background-repeat: no-repeat;
   background-position: bottom;
+  background-size: contain;
   gap: 3rem;
   width: 100vw;
   position: absolute;
@@ -63,41 +89,161 @@ header {
     font-weight: 700;
     font-size: 2rem;
   }
+
+  @include desktop() {
+    display: none;
+  }
+}
+
+.nav-menu__desktop {
+  display: none;
+
+  &-list {
+    @include flexBox(center, center, row);
+    list-style: none;
+    gap: 2.5rem;
+
+    p {
+      font-family: $font-body;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 1.5px;
+      color: $neutral-gray;
+      cursor: pointer;
+
+      &:hover {
+        color: #2c2830;
+      }
+    }
+
+    button {
+      font-weight: 700;
+      color: #2c2830;
+      border: 2px solid #2c2830;
+      padding: 1rem 2rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #2c2830;
+        color: $neutral-white;
+      }
+    }
+  }
+
+  @include desktop() {
+    display: block;
+  }
 }
 
 .heading-cont {
   @include flexBox(center, space-between);
   @include marginCenter;
   padding: 2em 0;
+  @include desktop() {
+    position: relative;
+  }
 }
 
 .hero {
   background-color: $primary-drk-violet;
 
-  #{&}-img {
-    width: 100%;
+  @include desktop() {
+    position: relative;
   }
 
-  #{&}-img-left {
+  &-cont {
+    @include desktop() {
+      @include marginCenter();
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+      column-gap: 3rem;
+      padding: 9rem 0;
+      position: relative;
+    }
+  }
+
+  picture {
+    @include desktop() {
+      grid-column: 2/3;
+    }
+  }
+
+  #{&}-img {
+    width: 100%;
+
+    @include desktop() {
+      width: 100%;
+    }
+  }
+
+  #{&}-img-left-desk {
+    display: none;
+    @include desktop() {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translate(-15%, 55%);
+    }
+  }
+
+  #{&}-img-right-desk {
+    display: none;
+    @include desktop() {
+      display: block;
+      z-index: 100;
+      position: absolute;
+      top: -8rem;
+      right: 0;
+    }
+  }
+
+  #{&}-img-left-mobile {
     position: absolute;
     top: 0;
     left: 0;
+
+    @include desktop() {
+      display: none;
+    }
   }
 
-  #{&}-img-right {
+  #{&}-img-right-mobile {
     position: absolute;
     bottom: 0;
     right: 0;
     transform: translateY(55%);
+    @include desktop() {
+      display: none;
+    }
   }
   #{&}-text-cont {
     position: relative;
-    padding: 8rem 0;
+    padding: 7rem 0;
+
+    @include desktop() {
+      grid-column: 1/2;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-bottom: 1px solid white;
+        width: 30%;
+      }
+    }
 
     div {
       @include marginCenter();
       @include flexBox(center, none, column);
       gap: 1.5rem;
+
+      @include desktop() {
+        width: 99%;
+        gap: 2.5rem;
+      }
 
       h1 {
         z-index: 998;
@@ -107,12 +253,37 @@ header {
         color: $neutral-white;
         line-height: 4.8rem;
         letter-spacing: -0.67px;
+
+        @include desktop() {
+          line-height: 7.5rem;
+          text-align: left;
+          font-size: 7.2rem;
+          z-index: 0;
+        }
       }
 
       p {
         @include paragraphStyling;
         color: $neutral-white;
         margin-bottom: 1.5rem;
+
+        @include desktop() {
+          text-align: left;
+        }
+      }
+
+      .button {
+        @include desktop() {
+          font-weight: 700;
+
+          align-self: flex-start;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $neutral-white;
+            color: #2c2830;
+          }
+        }
       }
     }
   }
@@ -132,10 +303,19 @@ header {
   @include marginCenter;
   margin: 15rem auto;
 
+  @include desktop() {
+    margin: 25rem auto 15rem auto;
+  }
+
   .horizontal-line {
     width: 50%;
     margin: 0 auto 4rem auto;
     border-bottom: 0.5px solid #c396c6;
+
+    @include desktop() {
+      width: 15%;
+      margin: 0 0 6rem 0;
+    }
   }
 
   h1 {
@@ -146,17 +326,31 @@ header {
     letter-spacing: -0.67px;
     color: #2c2830;
     margin-bottom: 6rem;
+
+    @include desktop() {
+      text-align: left;
+      font-size: 7.2rem;
+      margin-bottom: 8rem;
+    }
   }
 }
 
 .features-cont {
   @include flexBox(center, center, column);
   gap: 4rem;
+
+  @include desktop() {
+    flex-direction: row;
+  }
 }
 
 .feature-items {
   @include flexBox(center, center, column);
   gap: 1rem;
+
+  @include desktop() {
+    align-items: flex-start;
+  }
 
   .feature-icon {
     margin-bottom: 2rem;
@@ -186,6 +380,12 @@ header {
   padding: 5rem 0 4.5rem 0;
   background-color: $primary-drk-violet;
 
+  @include desktop() {
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: url("/dist/images/bg-pattern-how-we-work-desktop.svg");
+  }
+
   h2 {
     font-weight: 400;
     width: 30rem;
@@ -193,6 +393,25 @@ header {
     font-size: 4rem;
     color: $neutral-white;
     text-align: center;
+
+    @include desktop() {
+      width: 50%;
+      font-size: 5.6rem;
+      text-align: left;
+    }
+  }
+
+  .button {
+    @include desktop() {
+      font-weight: 700;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: $neutral-white;
+        color: #2c2830;
+      }
+    }
   }
 }
 
@@ -200,6 +419,10 @@ footer {
   background-image: url("/dist/images/bg-pattern-footer-mobile.svg");
   background-repeat: no-repeat;
   background-position: top 0;
+
+  @include desktop() {
+    background-image: url("/dist/images/bg-pattern-footer-desktop.svg");
+  }
 
   .footer-line {
     border-bottom: 0.2px solid #837d874b;
@@ -215,10 +438,31 @@ footer {
     @include flexBox(center, center, column);
     gap: 3rem;
 
+    @include desktop() {
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-bottom: 4rem;
+    }
+
     .footer-icons-cont {
       @include flexBox(center, center);
       gap: 2rem;
       margin-bottom: 4.5rem;
+
+      @include desktop() {
+        margin-bottom: 0;
+      }
+
+      .footer-icon {
+        @include desktop() {
+          cursor: pointer;
+
+          &:hover {
+            filter: brightness(30%);
+          }
+        }
+      }
     }
   }
 }
@@ -227,9 +471,26 @@ footer {
   @include flexBox(center, center, column);
   gap: 4rem;
 
+  @include desktop() {
+    justify-content: left;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10rem;
+  }
+
+  @media (min-width: 1050px) {
+    gap: 20em;
+  }
+
   .footer-item {
     @extend .footer-links;
     gap: 2rem;
+
+    @include desktop() {
+      flex-direction: column;
+      justify-content: start;
+      align-items: flex-start;
+    }
 
     p {
       font-weight: 700;
@@ -237,6 +498,10 @@ footer {
       font-size: 1.3rem;
       color: $neutral-gray;
       letter-spacing: 1.5px;
+
+      @include desktop() {
+        margin-bottom: 2rem;
+      }
     }
 
     &-links {
@@ -248,6 +513,13 @@ footer {
         font-size: 1.3rem;
         color: $primary-drk-violet;
         letter-spacing: 1.5px;
+        cursor: pointer;
+
+        @include desktop() {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
